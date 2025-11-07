@@ -1,0 +1,20 @@
+meta {
+  name: Listar usuarios
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://localhost:3000/api/users
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiamF2aUBqYXZpLmNvbSIsImlhdCI6MTc2MjUxNTc2OSwiZXhwIjoxNzYzMTIwNTY5fQ.cgh9vPet6hEZoPUjE34WlPpDUwleYjnjdeiqw3HjX8U
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

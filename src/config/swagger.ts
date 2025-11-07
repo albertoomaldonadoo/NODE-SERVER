@@ -55,6 +55,45 @@ const options: swaggerJsdoc.Options = {
             },
           },
         },
+
+        Profile: {
+          type: 'object',
+          properties: {
+            id: {
+              type: 'integer',
+              description: 'ID único del perfil',
+            },
+            name: {
+              type: 'string',
+              description: 'Nombre del perfil',
+            },
+            bio: {
+              type: 'string',
+              description: 'Descripción breve o biografía del usuario',
+            },
+            createdAt: {
+              type: 'string',
+              format: 'date-time',
+              description: 'Fecha de creación del perfil',
+            },
+          },
+        },
+
+        CreateProfileInput: {
+          type: 'object',
+          required: ['name'],
+          properties: {
+            name: {
+              type: 'string',
+              description: 'Nombre del perfil',
+            },
+            bio: {
+              type: 'string',
+              description: 'Descripción opcional del perfil',
+            },
+          },
+        },
+
         RegisterInput: {
           type: 'object',
           required: ['email', 'name', 'password'],
@@ -146,6 +185,10 @@ const options: swaggerJsdoc.Options = {
       {
         name: 'Users',
         description: 'Gestión de usuarios',
+      },
+      {
+        name: 'Profiles',
+        description: 'Gestión básica de perfiles de usuario',
       },
     ],
   },

@@ -2,7 +2,7 @@ import { Router } from "express";
 import { validate } from "../../middleware/validate.js";
 import { auth } from "../../middleware/auth.js";
 import { createProfileSchema } from "./profiles.schema.js";
-import { listProfilesCtrl, createProfileCtrl, deleteProfileCtrl } from "./profiles.controller.js";
+import { listProfilesCtrl, createProfileCtrl, deleteProfileCtrl, getProfileCtrl } from "./profiles.controller.js";
 
 const router = Router();
 
@@ -32,6 +32,29 @@ const router = Router();
  *                 $ref: '#/components/schemas/Profile'
  */
 router.get("/", auth, listProfilesCtrl);
+
+/**
+ * @swagger
+ * /api/profiles/{id}:
+ *   get:
+ *     summary: Obtiene un perfil por ID
+ *     tags: [Profiles]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: integer
+ *         required: true
+ *         description: ID del perfil a consultar
+ *     responses:
+ *       200:
+ *         description: Perfil encontrado
+ *       404:
+ *         description: Perfil no encontrado
+ */
+router.get("/:id", auth, getProfileCtrl);
 
 /**
  * @swagger

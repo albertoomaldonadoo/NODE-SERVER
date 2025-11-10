@@ -26,7 +26,7 @@ model Profile {
   id        Int      @id @default(autoincrement())
   name      String
   bio       String
-  location  String?
+  location  String
   createdAt DateTime @default(now())
 
           

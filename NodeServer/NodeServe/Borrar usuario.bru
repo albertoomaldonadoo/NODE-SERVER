@@ -1,0 +1,20 @@
+meta {
+  name: Borrar usuario
+  type: http
+  seq: 5
+}
+
+delete {
+  url: http://localhost:3000/api/users/2
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiamF2aTJAamF2aS5jb20iLCJpYXQiOjE3NjI5NzY2NDYsImV4cCI6MTc2MzU4MTQ0Nn0.ZEUaaKYsDc18FJUGLYzo5qNfjgtYMqChdZTI_5vil9w
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

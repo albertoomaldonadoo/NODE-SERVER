@@ -36,7 +36,7 @@ if (env.NODE_ENV !== 'test') {
 
 app.use('/api/users', usersRoutes);
 
-app.use('api/profiles', profilesRoutes)
+app.use('/api/profiles', profilesRoutes)
 
 app.use(errorHandler);
 

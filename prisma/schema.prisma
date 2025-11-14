@@ -14,13 +14,27 @@ datasource db {
 }
 
 model User {
-  id            Int      @id @default(autoincrement())
-  email         String   @unique
-  name          String
-  passwordHash  String
-  createdAt     DateTime @default(now())
-  trips         Trip[]
+  id           Int      @id @default(autoincrement())
+  email        String   @unique
+  name         String
+  passwordHash String
+  createdAt    DateTime @default(now())
+  profile      Profile?
+  trips        Trip[]
 }
+
+model Profile {
+  id        Int      @id @default(autoincrement())
+  name      String
+  bio       String
+  location  String
+  createdAt DateTime @default(now())
+
+          
+  user      User     @relation(fields: [userId], references: [id])
+  userId    Int      @unique
+}
+
 
 model Trip {
   id            Int      @id @default(autoincrement())
@@ -32,5 +46,3 @@ model Trip {
   userId        Int
   user          User     @relation(fields: [userId], references: [id])
 }
-
-

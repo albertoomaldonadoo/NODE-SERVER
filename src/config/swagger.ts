@@ -475,6 +475,13 @@
           description: 'Gestión de de los viajes' 
       }
     ],
+    apis: [
+      //join(__dirname, '../routes/*.ts'),
+      //join(__dirname, '../routes/*.js'),
+      //join(__dirname, '../index.ts'),
+      //join(__dirname, '../index.js'),
+      join(__dirname, '../modules/**/*.routes.js')
+    ],
   }
 
   export const swaggerSpec = swaggerJsdoc(options);
